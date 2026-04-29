@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Stuck to Started — Get Clear. Take Action. Today.</title>
+  <meta name="description" content="A simple 7-step system to get clear, take action, and stop wasting your day. You're not lazy. You're just unclear." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0e0e0e;
+      --ink-soft: #3a3a3a;
+      --ink-muted: #888;
+      --paper: #faf9f7;
+      --paper-warm: #f3f0eb;
+      --rule: #e4e0d8;
+      --accent: #1a1a1a;
+      --cta: #0e0e0e;
+      --cta-hover: #2a2a2a;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 249, 247, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--paper);
+      background: var(--cta);
+      border: none;
+      padding: 10px 22px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--cta-hover); }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 160px 0 100px;
+      text-align: left;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 32px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      width: 18px; height: 1px;
+      background: var(--ink-muted);
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(44px, 8vw, 72px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--ink-soft);
+    }
+
+    .hero-hook {
+      font-size: 19px;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin-bottom: 48px;
+      max-width: 500px;
+    }
+
+    .hero-hook strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--paper);
+      background: var(--cta);
+      border: none;
+      padding: 18px 36px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--cta-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary .arrow {
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover .arrow { transform: translateX(3px); }
+
+    .hero-sub {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-sub::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4caf50;
+      flex-shrink: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 0; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 36px;
+    }
+
+    /* ── PROBLEM ── */
+    .problem-text {
+      font-family: var(--serif);
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .problem-text em {
+      font-style: italic;
+      color: var(--ink-soft);
+    }
+
+    .problem-items {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .problem-item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 16px;
+      color: var(--ink-soft);
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .problem-item .num {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--ink-muted);
+      padding-top: 2px;
+    }
+
+    /* ── SYSTEM ── */
+    .system-intro {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-bottom: 52px;
+      max-width: 540px;
+    }
+
+    .system-intro strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .step-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--rule);
+      padding: 24px 0;
+      align-items: start;
+    }
+
+    .step-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      padding-top: 3px;
+    }
+
+    .step-content h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* ── WHAT YOU GET ── */
+    .gets-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .get-item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 16px;
+      color: var(--ink-soft);
+    }
+
+    .get-item::before {
+      content: '→';
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+    }
+
+    /* ── PRICE BLOCK ── */
+    .price-block {
+      background: var(--paper-warm);
+      padding: 60px 52px;
+      border: 1px solid var(--rule);
+    }
+
+    .price-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .price-currency {
+      font-family: var(--sans);
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--ink-soft);
+    }
+
+    .price-amount {
+      font-family: var(--serif);
+      font-size: 64px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .price-note {
+      font-size: 13px;
+      color: var(--ink-muted);
+      margin-bottom: 36px;
+    }
+
+    .price-includes {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .price-includes li {
+      list-style: none;
+      font-size: 14px;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .price-includes li::before {
+      content: '✓';
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .btn-full {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--paper);
+      background: var(--cta);
+      border: none;
+      padding: 20px 36px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-full:hover {
+      background: var(--cta-hover);
+    }
+
+    .secure-note {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    /* ── CLOSE ── */
+    .close-section {
+      padding: 80px 0 100px;
+      text-align: center;
+    }
+
+    .close-quote {
+      font-family: var(--serif);
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 48px;
+      font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 32px 28px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    /* ── MODAL (success) ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(14,14,14,0.6);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--paper);
+      max-width: 480px;
+      width: 100%;
+      padding: 52px 44px;
+      text-align: center;
+    }
+
+    .modal-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .modal h2 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .modal p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .modal .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cta);
+      color: var(--paper);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 15px 30px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .modal-close {
+      display: block;
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--ink-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--sans);
+    }
+
+    /* ── FADE IN ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero .container > * {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-eyebrow { animation-delay: 0s; }
+    h1            { animation-delay: 0.1s; }
+    .hero-hook    { animation-delay: 0.2s; }
+    .btn-primary  { animation-delay: 0.3s; }
+    .hero-sub     { animation-delay: 0.4s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .container { padding: 0 20px; }
+      .hero { padding: 130px 0 80px; }
+      .price-block { padding: 40px 28px; }
+      .modal { padding: 40px 28px; }
+      .step-row { grid-template-columns: 60px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">From Stuck to Started</a>
+    <button class="nav-cta" onclick="triggerPaystack()">Get Access — ₦2,500</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">Digital Book by Nate O</span>
+      <h1>From Stuck<br>to <em>Started</em></h1>
+      <p class="hero-hook">
+        <strong>You're not lazy. You're just unclear on what to do next.</strong><br>
+        A simple 7-step system to cut the fog, pick your direction, and actually start.
+      </p>
+      <button class="btn-primary" onclick="triggerPaystack()">
+        Get Instant Access — ₦2,500
+        <span class="arrow">→</span>
+      </button>
+      <p class="hero-sub">Instant download after payment. No waiting.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="container">
+      <p class="section-label">The Problem</p>
+      <p class="problem-text">
+        You sit down to work.<br>
+        An hour later — <em>nothing.</em><br>
+        Not because you're lazy.<br>
+        Because nobody gave you a system.
+      </p>
+      <div class="problem-items">
+        <div class="problem-item">
+          <span class="num">01</span>
+          <span>You overthink where to start, so you never start at all</span>
+        </div>
+        <div class="problem-item">
+          <span class="num">02</span>
+          <span>You begin with momentum and stop the moment it gets hard</span>
+        </div>
+        <div class="problem-item">
+          <span class="num">03</span>
+          <span>You feel stuck even when you know you have potential</span>
+        </div>
+        <div class="problem-item">
+          <span class="num">04</span>
+          <span>Every day ends with guilt instead of progress</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SYSTEM -->
+  <section>
+    <div class="container">
+      <p class="section-label">The System</p>
+      <p class="system-intro">
+        This is <strong>not a motivation book.</strong> There are no pep talks here.<br>
+        This is a navigation system — seven clear steps that take you from mental fog to consistent action, in real life, under real pressure.
+      </p>
+      <div class="steps-grid">
+        <div class="step-row">
+          <span class="step-tag">Step 01</span>
+          <div class="step-content">
+            <h3>The Dump</h3>
+            <p>Clear the mental backlog. Empty your head onto a page in five minutes.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <span class="step-tag">Step 02</span>
+          <div class="step-content">
+            <h3>The Pick</h3>
+            <p>Choose one thing. Not the perfect thing — one thing. Start there, now.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <span class="step-tag">Step 03</span>
+          <div class="step-content">
+            <h3>The Arrange</h3>
+            <p>Organize what matters without turning organization into procrastination.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <span class="step-tag">Step 04</span>
+          <div class="step-content">
+            <h3>The Search</h3>
+            <p>Know the right method before you start. Work smart, not just hard.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <span class="step-tag">Step 05</span>
+          <div class="step-content">
+            <h3>The Fix</h3>
+            <p>Diagnose what is actually blocking you — and remove it directly.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <span class="step-tag">Step 06</span>
+          <div class="step-content">
+            <h3>The Flow</h3>
+            <p>Stay in momentum between tasks. Stop losing afternoons to the gap.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <span class="step-tag">Step 07</span>
+          <div class="step-content">
+            <h3>The Check</h3>
+            <p>End each day with clarity, a win acknowledged, and a plan for tomorrow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- WHAT YOU GET -->
+  <section>
+    <div class="container">
+      <p class="section-label">What you walk away with</p>
+      <div class="gets-list">
+        <div class="get-item">A daily reset method that clears your head in under 10 minutes</div>
+        <div class="get-item">A simple way to pick your one priority and protect your focus</div>
+        <div class="get-item">A framework to remove overwhelm without complicated systems</div>
+        <div class="get-item">Tools to diagnose why you keep getting stuck — and fix it</div>
+        <div class="get-item">A rhythm that keeps you moving from task to task without losing momentum</div>
+        <div class="get-item">An evening review that ends guilt and builds consistency</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- PRICE -->
+  <section style="padding: 80px 0;">
+    <div class="container">
+      <div class="price-block">
+        <p class="price-eyebrow">One-time purchase</p>
+        <div class="price-display">
+          <span class="price-currency">₦</span>
+          <span class="price-amount">2,500</span>
+        </div>
+        <p class="price-note">Pay once. Keep it forever.</p>
+        <ul class="price-includes">
+          <li>Complete 7-step Clarity Action Loop</li>
+          <li>Instant PDF download — no account needed</li>
+          <li>Readable on any device</li>
+          <li>Short enough to finish in one sitting</li>
+        </ul>
+        <button class="btn-full" onclick="triggerPaystack()">
+          Get Instant Access — ₦2,500 <span>→</span>
+        </button>
+        <p class="secure-note">Secured by Paystack · Card, bank transfer, USSD accepted</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CLOSE -->
+  <section class="close-section">
+    <div class="container">
+      <p class="close-quote">"Start today.<br>Stop overthinking."</p>
+      <button class="btn-primary" onclick="triggerPaystack()" style="margin: 0 auto; display: inline-flex;">
+        I'm ready — Get the book <span class="arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Nate O · <em>From Stuck to Started</em> · All rights reserved</p>
+  </footer>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal">
+      <div class="modal-icon">✓</div>
+      <h2>You're all set.</h2>
+      <p>Payment confirmed. Your copy of <em>From Stuck to Started</em> is ready. Click below to download your PDF instantly.</p>
+      <a href="/mnt/user-data/uploads/FROM_STUCK_TO_STARTED.pdf" class="download-btn" download="From_Stuck_to_Started_Nate_O.pdf">
+        Download Your Book →
+      </a>
+      <button class="modal-close" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // ── PAYSTACK CONFIG ──
+    // Replace these values with your actual Paystack public key and email logic
+    const PAYSTACK_PUBLIC_KEY = 'pk_live_YOUR_PUBLIC_KEY_HERE'; // ← Replace with your actual key
+    const BOOK_PRICE_KOBO = 250000; // ₦2,500 in kobo
+
+    function triggerPaystack() {
+      // Option A: Inline popup (uncomment and configure)
+      /*
+      const handler = PaystackPop.setup({
+        key: PAYSTACK_PUBLIC_KEY,
+        email: prompt('Enter your email address to receive access:') || 'customer@email.com',
+        amount: BOOK_PRICE_KOBO,
+        currency: 'NGN',
+        ref: 'FSS_' + Math.floor(Math.random() * 1000000000 + 1),
+        metadata: {
+          custom_fields: [
+            { display_name: 'Product', variable_name: 'product', value: 'From Stuck to Started - PDF' }
+          ]
+        },
+        callback: function(response) {
+          openSuccessModal();
+        },
+        onClose: function() {
+          // Payment window closed
+        }
+      });
+      handler.openIframe();
+      */
+
+      // Option B: Redirect to Paystack payment link
+      // Replace the URL below with your actual Paystack payment page link
+      const PAYSTACK_LINK = 'https://paystack.com/pay/from-stuck-to-started'; // ← Replace with your link
+      window.open(PAYSTACK_LINK, '_blank');
+
+      // For demo/testing: show success modal after 1s delay
+      // Remove these two lines once real Paystack is configured
+      // setTimeout(openSuccessModal, 1000);
+    }
+
+    function openSuccessModal() {
+      document.getElementById('successModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on overlay click
+    document.getElementById('successModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</body>
+</html>
